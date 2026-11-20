@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Compile-only twin of Showcase.Runtime/NestedChain.cs WITHOUT runtime async
+       (classic compiler-generated state machines), used as the baseline. -->
+  <PropertyGroup>
+    <DefineConstants>$(DefineConstants);CLASSIC_ASYNC</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\Showcase.Runtime\NestedChain.cs" Link="NestedChain.cs" />
+  </ItemGroup>
+
+</Project>

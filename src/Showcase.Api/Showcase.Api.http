@@ -1,0 +1,39 @@
+@baseUrl = http://localhost:5080
+
+### Valid registration -> 201
+POST {{baseUrl}}/users
+Content-Type: application/json
+
+{ "username": "bob", "email": "bob@example.com" }
+
+### Username already taken (async validator) -> 400
+POST {{baseUrl}}/users
+Content-Type: application/json
+
+{ "username": "alice", "email": "alice@example.com" }
+
+### Same, German messages (case-insensitive check: "Admin" == "admin") -> 400
+POST {{baseUrl}}/users
+Content-Type: application/json
+Accept-Language: de
+
+{ "username": "Admin", "email": "admin@example.com" }
+
+### Several sync errors, German -> 400
+POST {{baseUrl}}/users
+Content-Type: application/json
+Accept-Language: de
+
+{ "username": "ab", "email": "not-an-email" }
+
+### Lookup
+GET {{baseUrl}}/users/bob
+
+### Last recorded HTTP server spans (tags emitted natively by ASP.NET Core 11)
+GET {{baseUrl}}/debug/last-spans
+
+### OpenAPI document (reports "openapi": "3.2.0")
+GET {{baseUrl}}/openapi/v1.json
+
+### EF Core 11 demo (SQLite): FullJoin + MaxBy/MinBy, SQL is logged to the console
+GET {{baseUrl}}/ef/report

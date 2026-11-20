@@ -1,0 +1,12 @@
+<Project>
+  <!-- Shared settings for every project in Net11Showcase. -->
+  <PropertyGroup>
+    <TargetFramework>net11.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <!-- "default" = latest released language version for the TFM, i.e. C# 15 on net11.0.
+         None of the demonstrated C# 15 features need LangVersion=preview. -->
+    <LangVersion>default</LangVersion>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+</Project>

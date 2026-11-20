@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Showcase.Api/Showcase.Api.csproj" />
+    <Project Path="src/Showcase.Language/Showcase.Language.csproj" />
+    <Project Path="src/Showcase.Runtime.Classic/Showcase.Runtime.Classic.csproj" />
+    <Project Path="src/Showcase.Runtime/Showcase.Runtime.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Showcase.Tests/Showcase.Tests.csproj" />
+  </Folder>
+</Solution>

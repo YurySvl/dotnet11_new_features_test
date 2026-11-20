@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <!-- Runtime async is OFF by default for user code on SDK 11.0.100 (verified).
+         This switch makes the compiler emit async methods as runtime-async methods
+         (MethodImpl flag 0x2000, no compiler-generated state machine).
+         Note: <UseRuntimeAsync>true</UseRuntimeAsync> had no effect on user code in our tests. -->
+    <Features>$(Features);runtime-async=on</Features>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Same NestedChain.cs, compiled WITHOUT runtime async, for side-by-side comparison. -->
+    <ProjectReference Include="..\Showcase.Runtime.Classic\Showcase.Runtime.Classic.csproj" />
+  </ItemGroup>
+
+</Project>
